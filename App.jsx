@@ -1,11 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import HomePage from "./pages/HomePage";
-import ProductListingPage from "./pages/ProductListingPage";
-import ProductViewPage from "./pages/ProductViewPage";
+import Layout from "./src/components/Layout.jsx";
+import HomePage from "./src/pages/HomePage";
+import ProductListingPage from "./src/pages/ProductListingPage";
+import ProductViewPage from "./src/pages/ProductViewPage";
 
 const App = () => (
+  console.log("Foi renderizado o App"),
   <Routes>
     <Route path="/" element={<Layout />}>
       <Route index element={<HomePage />} />

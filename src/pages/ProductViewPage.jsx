@@ -1,0 +1,12 @@
+import React from "react";
+
+const ProductListingPage = () => {
+    return (
+        <div>
+            <h1>Product Listing Page</h1>
+            <p>Here you can find a list of products.</p>
+            {/* You can add a ProductListing component here to display products */}
+        </div>
+    );
+};
+export default ProductListingPage;
