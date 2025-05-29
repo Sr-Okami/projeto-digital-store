@@ -1,10 +1,21 @@
 import React from "react";
 import { Button } from "primereact/button";
+import { Carousel } from 'primereact/carousel';
 import "../styles/Homepage.css"
 
 const HomePage = () => {
+    const banners = [
+        {
+            title: "Melhores ofertas personalizadas",
+            highlight: "Queima de estoque Nike 🔥",
+            description: "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            image: "src/assets/Img/White-Sneakers-PNG-Clipart 1.png",
+            ornament: "src/assets/Img/Ornament 11.png"
+        }
+    ];
+
     return (
-        <main className="m-[90px_104px_90px_104px] relative">
+        <main className="m-[90px_104px_150px_104px] relative">
             <div id="cointainer-Queima" className="max-w-[500px]">
                 <p id="Ofertas" className="text-[16px] mb-[20px]">
                     Melhores ofertas personalizadas
@@ -24,5 +35,6 @@ const HomePage = () => {
             </div>
         </main>
     );
-}
+};
+
 export default HomePage;
