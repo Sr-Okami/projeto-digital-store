@@ -34,7 +34,7 @@ const Header = () => {
               root: { className: "bg-primary-force w-[114px] h-[40px]" },
             }}
           />
-          <img src="src/assets/mini-cart.svg" alt="Carrinho de compras" />
+          <img src={`${import.meta.env.BASE_URL}assets/mini-cart.svg`} alt="Carrinho" />
         </div>
       </div>
       <div>

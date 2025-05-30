@@ -5,7 +5,7 @@ const Logo = ({ variant = "header", ...props }) => {
     const src =
         variant === "footer"
             ? `${import.meta.env.BASE_URL}assets/logo-header.svg`
-            : ".src/assets/logo-header.svg";
+            : `${import.meta.env.BASE_URL}assets/logo-header.svg`;
     return (
         <img
             height={44}
