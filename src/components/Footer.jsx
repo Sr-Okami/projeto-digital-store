@@ -29,9 +29,9 @@ const Footer = () => {
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
                     </p>
                     <div class="flex gap-[20px] mt-[10px]">
-                      <img src="src/assets/facebook.svg" alt="Facebook" />
-                      <img src="src/assets/instagram.svg" alt="Instagram" />
-                      <img src="src/assets/twitter.svg" alt="Twitter" />
+                      <img src={`${import.meta.env.BASE_URL}assets/facebook.svg`} alt="Facebook" />
+                      <img src={`${import.meta.env.BASE_URL}assets/instagram.svg`} alt="Instagram" />
+                      <img src={`${import.meta.env.BASE_URL}assets/twitter.svg`} alt="Twitter" />
                     </div>
                 </div>
                 <div className="">
