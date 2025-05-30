@@ -1,3 +1,5 @@
 .gitginore
 node_modules
 .cache
+
+.vercel

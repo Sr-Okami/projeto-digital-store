@@ -7,6 +7,7 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
+    assetsInclude: ['**/*.png', '**/*.svg', '**/*.jpg'],
     assetsInclude: ['**/*.woff2', '**/*.woff', '**/*.ttf'],
     copyPublicDir: true
   }
