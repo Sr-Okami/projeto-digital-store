@@ -4,7 +4,7 @@ import React from 'react';
 const Logo = ({ variant = "header", ...props }) => {
     const src =
         variant === "footer"
-            ? ".src\assets\logo-header.svg"
+            ? ".src/assets/logo-header.svg"
             : ".src/assets/logo-header.svg";
     return (
         <img
