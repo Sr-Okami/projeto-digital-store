@@ -7,9 +7,9 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
+    "build": "vite build",
     "start": "vite",
-    "preview": "vite preview",
-    "build": "vite build"
+    "preview": "vite preview"
   },
   "dependencies": {
     "primeicons": "^7.0.0",
