@@ -6,7 +6,7 @@ import './src/styles/global.css';
 
 
 createRoot(document.getElementById('root')).render(
-    <BrowserRouter>
+    <BrowserRouter basename="/projeto-digital-store">
         <App/>
     </BrowserRouter>
 )
