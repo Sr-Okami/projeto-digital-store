@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "primereact/button";
 import { Carousel } from 'primereact/carousel';
-import "../styles/Homepage.css"
+import "../assets/styles/Homepage.css"
 
 const HomePage = () => {
     const banners = [
@@ -31,7 +31,7 @@ const HomePage = () => {
             </div>
             <div>
                 <img src="src\assets\Img\White-Sneakers-PNG-Clipart 1.png" alt="tenis" className="absolute left-[300px] top-[230px] -translate-y-1/2 w-[70%]"/>
-                <img src="src\assets\Img\Ornament 11.png" alt="pontos amalemos" className="absolute left-[1000px] top-[60px] -translate-y-1/2 w-[]"/>
+                <img src="src\assets\Img\Ornament 11.png" alt="pontos amarelos" className="absolute left-[1000px] top-[60px] -translate-y-1/2 w-[]"/>
             </div>
         </main>
     );

@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "./Logo";
-import "../styles/Footer.css";
+import "../assets/styles/Footer.css";
 import informationsData from "./information.json";
 
 const FooterInformations = ({ title, informations }) => (
