@@ -4,8 +4,8 @@ import React from 'react';
 const Logo = ({ variant = "header", ...props }) => {
     const src =
         variant === "footer"
-            ? "C:\Users\Matheus\Documents\projetos\proj digital store\projeto-digital-store\src\assets\logo-header.svg"
-            : "src/assets/logo-header.svg";
+            ? ".src\assets\logo-header.svg"
+            : ".src/assets/logo-header.svg";
     return (
         <img
             height={44}
