@@ -2,7 +2,7 @@
     {
         "title": "Informações",
         "informations": [
-            { "text": "Sobre Drip Store", "link": "/about" },
+            { "text": "Sobre Drip Store", "link": "#" },
             { "text": "Segurança", "link": "#" },
             { "text": "Whishlist", "link": "#" },
             { "text": "Blog", "link": "#" },

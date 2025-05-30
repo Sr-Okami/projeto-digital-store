@@ -3,6 +3,8 @@ import Logo from "./Logo";
 import "../assets/styles/Footer.css";
 import informationsData from "./information.json";
 
+//Rodape com a informações em JSON, meio complicadodinho mais deu certo.
+//As informações clicaveis não estão indo para lugar algum (#).
 const FooterInformations = ({ title, informations }) => (
   <div  id="colunas-container">
     <span className="text-[22px] mb-[25px] block">{title}</span>

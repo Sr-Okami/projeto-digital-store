@@ -8,7 +8,8 @@ import { InputIcon } from "primereact/inputicon";
 import { InputText } from "primereact/inputtext";
 
 {
-  /*Cabecalho da pagina*/
+  //Cabecalho da pagina
+  //mesmo com o tailwind quebrado está funcionando usando o css
 }
 const Header = () => {
   return (
