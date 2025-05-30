@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "primereact/button";
 import { Carousel } from 'primereact/carousel';
-import "../assets/styles/Homepage.css"
+import "/public/assets/styles/Homepage.css"
 
 const HomePage = () => {
     const banners = [

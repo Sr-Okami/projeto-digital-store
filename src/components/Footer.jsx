@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "./Logo";
-import "../assets/styles/Footer.css";
+import "/public/assets/styles/Footer.css";
 import informationsData from "./information.json";
 
 //Rodape com a informações em JSON, meio complicadodinho mais deu certo.
