@@ -12,6 +12,7 @@ module.exports = {
         success: '#52CA76',
         warning: '#F6AA1C',
         white: '#FFFFFF',
+        
         // Escala de cinza customizada
         'dark-gray': '#1F1F1F',
         'dark-gray-2': '#474747',
@@ -20,8 +21,12 @@ module.exports = {
         'light-gray-2': '#CCCCCC',
         'light-gray-3': '#F5F5F5',
         black: '#000000',
+        'primary': '#EC4899' //cor para primary (o rosa da sua Digital Store)
       },
     },
   },
   plugins: [],
 }
+
+
+
