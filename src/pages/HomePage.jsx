@@ -13,30 +13,33 @@ const HomePage = () => {
             detalhe: `${import.meta.env.BASE_URL}assets/Img/Ornament 11.png`
         },
         {
-            imagem: `${import.meta.env.BASE_URL}assets/home-slide-1.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/Img/home-slide-1.jpeg`,
         },
         {
-            imagem: `${import.meta.env.BASE_URL}assets/home-slide-2.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/Img/home-slide-2.jpeg`,
         },
         {
-            imagem: `${import.meta.env.BASE_URL}assets/home-slide-3.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/Img/home-slide-3.jpeg`,
         },
         {
-            imagem: `${import.meta.env.BASE_URL}assets/home-slide-4.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/Img/home-slide-4.jpeg`,
         },
         /*{
-            imagem: `${import.meta.env.BASE_URL}assets/home-slide-5.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/Img/home-slide-5.jpeg`,
         },
         {
-            imagem: `${import.meta.env.BASE_URL}assets/home-slide-6.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/Img/home-slide-6.jpeg`,
         },
         {
-            imagem: `${import.meta.env.BASE_URL}assets/home-slide-7.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/Img/home-slide-7.jpeg`,
         },
         {
-            imagem: `${import.meta.env.BASE_URL}assets/home-slide-8.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/Img/home-slide-8.jpeg`,
         },*/
     ];
+    const Colecao = () => {
+        
+    };
 
     const bannerTemplate = (banner) => {
         if (!banner.subtitulo && !banner.titulo && !banner.descricao) {
@@ -63,8 +66,9 @@ const HomePage = () => {
     };
 
     return (
-        <main className="m-[90px_104px_150px_104px] relative">
-            <Carousel 
+        <main className="max-w-7xl mx-auto px-4 py-12 relative">
+            <div>
+               <Carousel 
                 value={banners.slice(0, 4)}
                 itemTemplate={bannerTemplate}
                 numVisible={1}
@@ -73,7 +77,21 @@ const HomePage = () => {
                 circular
                 showIndicators
                 showNavigators={false}
-            />
+                /> 
+            </div>
+            <div>
+                <h3 className="text-secundary">
+                    Coleções em destaque
+                </h3>
+                <div className="flex gap-[30px] m-[20px_50px_80px_50px]">
+                    <img src={`${import.meta.env.BASE_URL}assets/Img/collection-1.png`} alt="Coleção" className=" h-[200px] shadow-[0px_11px_17px_0px_#C92071] cursor-pointer" />
+                    <img src={`${import.meta.env.BASE_URL}assets/Img/collection-2.png`} alt="Coleção" className=" h-[200px] shadow-[0px_11px_17px_0px_#C92071] cursor-pointer" />
+                    <img src={`${import.meta.env.BASE_URL}assets/Img/collection-3.png`} alt="Coleção" className=" h-[200px] shadow-[0px_11px_17px_0px_#C92071] cursor-pointer" />
+                </div>
+            </div>
+            <div>
+                <h3>Coleções em destaque</h3>
+            </div>
         </main>
     );
 };
