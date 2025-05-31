@@ -13,28 +13,28 @@ const HomePage = () => {
             detalhe: `${import.meta.env.BASE_URL}assets/Img/Ornament 11.png`
         },
         {
-            imagem: `${import.meta.env.BASE_URL}public/home-slide-1.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/home-slide-1.jpeg`,
         },
         {
-            imagem: `${import.meta.env.BASE_URL}public/home-slide-2.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/home-slide-2.jpeg`,
         },
         {
-            imagem: `${import.meta.env.BASE_URL}public/home-slide-3.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/home-slide-3.jpeg`,
         },
         {
-            imagem: `${import.meta.env.BASE_URL}public/home-slide-4.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/home-slide-4.jpeg`,
         },
         /*{
-            imagem: `${import.meta.env.BASE_URL}public/home-slide-5.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/home-slide-5.jpeg`,
         },
         {
-            imagem: `${import.meta.env.BASE_URL}public/home-slide-6.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/home-slide-6.jpeg`,
         },
         {
-            imagem: `${import.meta.env.BASE_URL}public/home-slide-7.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/home-slide-7.jpeg`,
         },
         {
-            imagem: `${import.meta.env.BASE_URL}public/home-slide-8.jpeg`,
+            imagem: `${import.meta.env.BASE_URL}assets/home-slide-8.jpeg`,
         },*/
     ];
 
