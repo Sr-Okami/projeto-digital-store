@@ -14,7 +14,7 @@ import { InputText } from "primereact/inputtext";
 const Header = () => {
   return (
     <header>
-      <div className="flex gap-5 items-center max-w-7xl mx-auto px-4 py-4">
+      <div className=" gap-5 items-center max-w-7xl mx-auto px-4 py-4">
         <Logo variant="header"/>
         <div className="gap-[20px] flex items-center">
           <IconField iconPosition="right" className="w-[559px]">
