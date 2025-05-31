@@ -4,8 +4,8 @@ import { HashRouter } from "react-router-dom";
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import App from "./App.jsx";
-import './src/styles/global.css';
+import App from "./Routes.jsx";
+import './src/styles/index.css';
 
 
 createRoot(document.getElementById('root')).render(
