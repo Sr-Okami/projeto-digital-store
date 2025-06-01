@@ -17,7 +17,7 @@ const FilterGroup = ({ title, inputType, options }) => {
           - shadow-sm: Adiciona uma pequena sombra.
       */}
       {/* Título do grupo de filtros */}
-      <h3 className="text-dark-gray-2 text-base font-semibold mb-2 ">
+      <h3 className="text-dark-gray-2 text-base font-semibold mb-2">
         {/*
           - text-dark-gray-2: Cor do texto (assumindo que 'dark-gray-2' seja uma cor personalizada no Tailwind,
             caso contrário, use uma cor padrão como 'text-gray-800' ou 'text-gray-900').

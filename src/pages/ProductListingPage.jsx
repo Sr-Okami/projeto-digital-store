@@ -28,20 +28,21 @@ const brandOptions = [
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 p-8 flex ">
+    <div className="min-h-screen bg-gray-100 p-8 flex">
       {" "}
       {/* Layout geral da página */}
       {/* Sidebar de filtros */}
-      <aside className="w-[308px] space-y-6">
-        {" "}
-        {/* w-[308px] para a largura da sidebar, space-y-6 para espaçamento entre os grupos */}
-        <FilterGroup
-          title="Marca"
-          inputType="checkbox" // Usar checkboxes para múltiplas seleções
-          options={productMarca}
-        />
-        <FilterGroup
-          title="Categoria"
+      <div className="flex-shrink-0 g-ap-4 flex m-4 mb-8">
+        <aside className="w-[308px] space-y-6 m-[10px] p-[10px] gap-[20px]">
+          {" "}
+          {/* w-[308px] para a largura da sidebar, space-y-6 para espaçamento entre os grupos */}
+          <FilterGroup
+            title="Marca"
+            inputType="checkbox" // Usar checkboxes para múltiplas seleções
+            options={productMarca}
+          />
+          <FilterGroup
+            title="Categoria"
           inputType="checkbox"
           options={productCategories}
         />
@@ -56,8 +57,24 @@ function App() {
           options={brandOptions}
         />
       </aside>
+      </div>
+       {/* Conteúdo principal da página (onde os produtos seriam listados) */}
+
+       <div>
+          <h3> <span className="font-bold">Resultados para “Tênis”-</span> 389 produtos</h3> 
+       </div>
+
+      <main className="flex-grow ml-8 bg-white p-6 rounded-md shadow-md">
+        <section>
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">Products</h1>
+          <p className="text-gray-600">List of products will go here, filtered by the selections.</p>
+          {/* Aqui você renderizaria os produtos */}
+        </section>
+      </main>
     </div>
   );
 }
 
 export default App;
+
+
