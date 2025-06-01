@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-100 p-8 flex "> {/* Layout geral da página */}
       {/* Sidebar de filtros */}
-      <aside className="w-[308px] space-y-6"> {/* w-[308px] para a largura da sidebar, space-y-6 para espaçamento entre os grupos */}
+      <aside className="w-[308px] space-y-6 m-8"> {/* w-[308px] para a largura da sidebar, space-y-6 para espaçamento entre os grupos */}
         <FilterGroup
           title="Marca"
           inputType="checkbox" // Usar checkboxes para múltiplas seleções
