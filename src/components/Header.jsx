@@ -31,7 +31,7 @@ const Header = () => {
           <Button
             label="Entrar"
             pt={{
-              root: { className: "bg-primary-force w-30 h-10 rounded-md" },
+              root: { className: "bg-primary text-white w-30 h-10 rounded-md" },
             }}
           />
           <img className="cursor-pointer" src={`${import.meta.env.BASE_URL}assets/mini-cart.svg`} alt="Carrinho" />
@@ -49,7 +49,7 @@ const Header = () => {
               : "text-dark-gray-2 font-bold")}>Produtos</NavLink>
             </li>
             <li>
-              <NavLink to="/categorias" className={({ isActive }) => (isActive ? " text-primary underline decoration-2 underline-offset-5 font-bold"
+              <NavLink to="/categorias" className={({ isActive }) => (isActive ? " text-primary underline decoration-3 underline-offset-5 font-bold"
               : "text-dark-gray-2 font-bold")}>Categorias</NavLink>
             </li>
             <li>
