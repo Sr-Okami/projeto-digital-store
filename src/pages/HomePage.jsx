@@ -48,23 +48,24 @@ const HomePage = () => {
         }
 
         return (
-            <div className="relative flex items-center">
+            <div className="relative flex items-center ">
                 <div className="max-w-[500px]">
                     <p id="Ofertas" className="text-[16px] mb-[20px]">{banner.subtitulo}</p>
                     <p id="Estoque" className="text-[64px] max-w-[500px] mb-[20px]">{banner.titulo}</p>
                     <p className="text-[18px] max-w-[450px] mb-[20px]">{banner.descricao}</p>
-                    <Button label="Ver Ofertas" className="w-[220px] h-[48px] bg-primary-force"/>
+                    <Button label="Ver Ofertas" className="w-[220px] h-[48px] bg-primary text-white rounded-md"/>
                 </div>
                 <div>
-                    <img src={banner.imagem} alt="Tênis" className="absolute left-[300px] top-[190px] -translate-y-1/2 w-[60%]"/>
-                    <img src={banner.detalhe} alt="Ornamento" className="absolute left-[850px] top-[60px] -translate-y-1/2 w-[10%]"/>
+                    <img src={banner.imagem} alt="Tênis" className="absolute left-[450px] top-[190px] -translate-y-1/2 w-[60%]"/>
+                    <img src={banner.detalhe} alt="Ornamento" className="absolute left-[1000px] top-[60px] -translate-y-1/2 w-[10%]"/>
                 </div>
             </div>
         );
     };
 
     return (
-        <main className="max-w-7xl mx-auto px-4 py-12 relative">
+        //Banner principal
+        <main className="max-w-6xl mx-auto px-4 py-12 relative">
             <div className="justify-center">
                <Carousel 
                 value={banners.slice(0, 4)}
@@ -77,8 +78,9 @@ const HomePage = () => {
                 showNavigators={false}
                 /> 
             </div>
+            {/*Coleções em destaque com 3 imagens*/}
             <div>
-                <h3 className="text-dark-gray-2 text-2xl mr-6">
+                <h3 className="font-bold text-dark-gray-2 text-2xl mr-auto">
                     Coleções em destaque
                 </h3>
                 <div className="flex gap-10 justify-center">
@@ -87,8 +89,38 @@ const HomePage = () => {
                     <img src={`${import.meta.env.BASE_URL}assets/Img/collection-3.png`} alt="Coleção" className=" h-[200px] shadow-[0px_11px_17px_0px_#C92071] cursor-pointer" />
                 </div>
             </div>
+            {/*Coleções em destaque com 5 imagens*/}
+            <div className="justify-center flex">
+                <h3 className="font-bold text-dark-gray-2 text-2xl  mt-8">Coleções em destaque</h3>
+            </div>
+            <div className="mt-5 flex gap-20 justify-center">
+                    <div className="flex flex-col items-center">
+                        <img src="../public/assets/Vector1.svg" alt="Camisa"/>
+                        <span className="text-dark-gray-2 text-1xl font-bold mt-3.5">Camisetas</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <img src="../public/assets/Vector2.svg" alt="Calças"/>
+                        <span className="text-dark-gray-2 text-1xl font-bold mt-3.5">Calças</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <img className="h-20 max-w-7x1" src="../public/assets/Vector5.svg" alt="Bonés"/>
+                        <span className="text-dark-gray-2 text-1xl font-bold">Bonés</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <img src="../public/assets/Vector4.svg" alt="Headphones"/>
+                        <span className="text-1xl font-bold mt-3.5">Headphones</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <img src="../public/assets/Vector3.svg" alt="Tênis"/>
+                        <span className="text-dark-gray-2 text-1xl font-bold mt-3.5">Tênis</span>
+                    </div>
+            </div>
+            {/*Produtos em alta com cards de produtos feito em .JSON*/}
             <div>
-                <h3>Coleções em destaque</h3>
+                <div className="flex justify-between">
+                    <h2 className="font-bold text-dark-gray-2 text-2xl">Produtos em alta</h2>
+                    <a className="text-primary" href="#">Ver todos →</a>
+                </div>
             </div>
         </main>
     );
