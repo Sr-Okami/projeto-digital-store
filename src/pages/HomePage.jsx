@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "primereact/button";
 import { Carousel } from 'primereact/carousel';
-import "/public/assets/styles/Homepage.css"
+import "../styles/Homepage.css"
 
 const HomePage = () => {
     const banners = [
@@ -37,10 +37,7 @@ const HomePage = () => {
             imagem: `${import.meta.env.BASE_URL}assets/Img/home-slide-8.jpeg`,
         },*/
     ];
-    const Colecao = () => {
-        
-    };
-
+    
     const bannerTemplate = (banner) => {
         if (!banner.subtitulo && !banner.titulo && !banner.descricao) {
             return (
@@ -49,6 +46,7 @@ const HomePage = () => {
                 </div>
             );
         }
+
         return (
             <div className="relative flex items-center">
                 <div className="max-w-[500px]">
@@ -67,7 +65,7 @@ const HomePage = () => {
 
     return (
         <main className="max-w-7xl mx-auto px-4 py-12 relative">
-            <div>
+            <div className="justify-center">
                <Carousel 
                 value={banners.slice(0, 4)}
                 itemTemplate={bannerTemplate}
@@ -80,10 +78,10 @@ const HomePage = () => {
                 /> 
             </div>
             <div>
-                <h3 className="text-secundary">
+                <h3 className="text-dark-gray-2 text-2xl mr-6">
                     Coleções em destaque
                 </h3>
-                <div className="flex gap-[30px] m-[20px_50px_80px_50px]">
+                <div className="flex gap-10 justify-center">
                     <img src={`${import.meta.env.BASE_URL}assets/Img/collection-1.png`} alt="Coleção" className=" h-[200px] shadow-[0px_11px_17px_0px_#C92071] cursor-pointer" />
                     <img src={`${import.meta.env.BASE_URL}assets/Img/collection-2.png`} alt="Coleção" className=" h-[200px] shadow-[0px_11px_17px_0px_#C92071] cursor-pointer" />
                     <img src={`${import.meta.env.BASE_URL}assets/Img/collection-3.png`} alt="Coleção" className=" h-[200px] shadow-[0px_11px_17px_0px_#C92071] cursor-pointer" />

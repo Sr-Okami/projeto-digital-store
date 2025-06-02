@@ -1,6 +1,5 @@
 import React from "react";
 import Logo from "./Logo";
-import "/public/assets/styles/Footer.css";
 import informationsData from "./information.json";
 
 //Rodape com a informações em JSON, meio complicadodinho mais deu certo.
@@ -20,8 +19,8 @@ const FooterInformations = ({ title, informations }) => (
 
 const Footer = () => {
     return (
-        <footer className="footer-force">
-            <div className="flex itens-center m-[72px_104px_40px_104px] gap-[60px]">
+        <footer className="bg-dark-gray text-white">
+            <div className="flex justify-center gap-[60px] mt-15 mb-15">
                 <div>
                     {/*Primeira coluna*/}
                     <Logo variant="footer" />
@@ -29,13 +28,10 @@ const Footer = () => {
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
                     </p>
                     <div class="flex gap-[20px] mt-[10px]">
-                      <img src={`${import.meta.env.BASE_URL}assets/facebook.svg`} alt="Facebook" />
-                      <img src={`${import.meta.env.BASE_URL}assets/instagram.svg`} alt="Instagram" />
-                      <img src={`${import.meta.env.BASE_URL}assets/twitter.svg`} alt="Twitter" />
+                      <img className="cursor-pointer" src={`${import.meta.env.BASE_URL}assets/facebook.svg`} alt="Facebook" />
+                      <img className="cursor-pointer" src={`${import.meta.env.BASE_URL}assets/instagram.svg`} alt="Instagram" />
+                      <img className="cursor-pointer" src={`${import.meta.env.BASE_URL}assets/twitter.svg`} alt="Twitter" />
                     </div>
-                </div>
-                <div className="">
-
                 </div>
                 {/*Restante das colunas */}
                 {informationsData.map((item, idx) => (
