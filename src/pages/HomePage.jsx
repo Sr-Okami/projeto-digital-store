@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "primereact/button";
 import { Carousel } from 'primereact/carousel';
+import ProductCard from "../components/ProductCard";
 import "../styles/Homepage.css"
 
 const HomePage = () => {
@@ -120,6 +121,9 @@ const HomePage = () => {
                 <div className="flex justify-between">
                     <h2 className="font-bold text-dark-gray-2 text-2xl">Produtos em alta</h2>
                     <a className="text-primary" href="#">Ver todos →</a>
+                </div>
+                <div>
+                
                 </div>
             </div>
         </main>

@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "Categoria": "Tênis",
+        "imagem": "public/assets/Img/produc-image-1.jpeg",
+        "Nome": "K-Swiss V8 - Masculino",
+        "Preco": 249.90,
+        "PrecoDesconto": 199.90
+    },
+    {
+        "id": 2,
+        "Categoria": "Tênis",
+        "imagem": "public/assets/Img/produc-image-2.jpeg",
+        "Nome": "Adidas Ultraboost 22 - Unissex",
+        "Preco": 899.90,
+        "PrecoDesconto": 759.90
+    },
+    {
+        "id": 3,
+        "Categoria": "Tênis",
+        "imagem": "public/assets/Img/produc-image-3.jpeg",
+        "Nome": "Nike Air Force 1 - Feminino",
+        "Preco": 799.00,
+        "PrecoDesconto": 699.00
+    },
+    {
+        "id": 4,
+        "Categoria": "Tênis",
+        "imagem": "public/assets/Img/produc-image-4.jpeg",
+        "Nome": "Puma Smash V2 - Masculino",
+        "Preco": 349.90,
+        "PrecoDesconto": 279.90
+    },
+    {
+        "id": 5,
+        "Categoria": "Tênis",
+        "imagem": "public/assets/Img/produc-image-5.jpeg",
+        "Nome": "New Balance 574 - Unissex",
+        "Preco": 599.90,
+        "PrecoDesconto": 499.90
+    },
+    {
+        "id": 6,
+        "Categoria": "Tênis",
+        "imagem": "public/assets/Img/produc-image-2.jpeg",
+        "Nome": "Asics Gel-Quantum 360 - Masculino",
+        "Preco": 699.90,
+        "PrecoDesconto": 599.90
+    },
+    {
+        "id": 7,
+        "imagem": "public/assets/Img/produc-image-4.jpeg",
+        "Categoria": "Tênis",
+        "Nome": "Vans Old Skool - Feminino",
+        "Preco": 349.90,
+        "PrecoDesconto": 299.90
+    },
+    {
+        "id": 8,
+        "imagem": "public/assets/Img/produc-image-1.jpeg",
+        "Categoria": "Tênis",
+        "Nome": "Mizuno Wave Rider 26 - Unissex",
+        "Preco": 649.90,
+        "PrecoDesconto": 549.90
+    }
+]
