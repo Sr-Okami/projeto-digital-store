@@ -108,7 +108,7 @@ const HomePage = () => {
                     </div>
                     <div className="flex flex-col items-center">
                         <img src="../public/assets/Vector4.svg" alt="Headphones"/>
-                        <span className="text-1xl font-bold mt-3.5">Headphones</span>
+                        <span className="text-dark-gray-2 text-1xl font-bold mt-3.5">Headphones</span>
                     </div>
                     <div className="flex flex-col items-center">
                         <img src="../public/assets/Vector3.svg" alt="Tênis"/>
