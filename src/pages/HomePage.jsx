@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "primereact/button";
 import { Carousel } from 'primereact/carousel';
-import ProductCard from "../components/ProductCard";
 import "../styles/Homepage.css"
 
 const HomePage = () => {
