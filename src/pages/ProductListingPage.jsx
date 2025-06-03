@@ -28,15 +28,16 @@ const brandOptions = [
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 p-8 flex">
+    <div className="min-h-screen bg-gray-100 p-8 flex ">
       {" "}
       {/* Layout geral da página */}
       {/* Sidebar de filtros */}
       <div className="flex-shrink-0 g-ap-4 flex m-4 mb-8">
-        <aside className="w-[308px] space-y-6 m-[10px] p-[10px] gap-[20px]">
+        <aside className="w-[308px] h-[720px] flex-col m-[10px] p-[30px] t-[332px] gap-[20px]">
           {" "}
           {/* w-[308px] para a largura da sidebar, space-y-6 para espaçamento entre os grupos */}
-          <FilterGroup
+          
+          <FilterGroup 
             title="Marca"
             inputType="checkbox" // Usar checkboxes para múltiplas seleções
             options={productMarca}
@@ -70,6 +71,7 @@ function App() {
           <p className="text-gray-600">List of products will go here, filtered by the selections.</p>
           {/* Aqui você renderizaria os produtos */}
         </section>
+
       </main>
     </div>
   );

@@ -8,7 +8,7 @@ const FilterGroup = ({ title, inputType, options }) => {
   const validInputType = inputType === "radio" ? "radio" : "checkbox";
 
   return (
-    <div className="bg-white w-[380px] pt-4 rounded-md shadow-sm ">
+    <div className="bg-white w-[380px] pt-4 rounded-md shadow-sm">
       {/* Container principal do grupo de filtros:
           - bg-white: Fundo branco.
           - w-[308px]: Largura fixa de 308px (largura de 308px, que é uma classe customizada).
@@ -17,7 +17,7 @@ const FilterGroup = ({ title, inputType, options }) => {
           - shadow-sm: Adiciona uma pequena sombra.
       */}
       {/* Título do grupo de filtros */}
-      <h3 className="text-dark-gray-2 text-base font-semibold mb-2">
+      <h3 className="text-dark-gray-2 text-base font-semibold mb-2 m-2">
         {/*
           - text-dark-gray-2: Cor do texto (assumindo que 'dark-gray-2' seja uma cor personalizada no Tailwind,
             caso contrário, use uma cor padrão como 'text-gray-800' ou 'text-gray-900').
@@ -48,7 +48,7 @@ const FilterGroup = ({ title, inputType, options }) => {
               type={validInputType} // Define o tipo de input (checkbox ou radio)
               name={title} // 'name' é importante para grupos de radio buttons (garante que apenas um seja selecionável)
               value={option.value || option.text} // Usa 'value' se existir, se não usa 'text'
-              className="mr-2 h-[22px] w-[22px] form-checkbox text-primary focus:ring-primary rounded"
+              className="mr-2 h-[22px] w-[22px] g-[10px] form-checkbox text-primary focus:ring-primary rounded"
               // As classes acima assumem que você configurou o plugin @tailwindcss/forms para 'form-checkbox'.
               // Caso contrário, algumas classes como 'form-checkbox' e 'rounded' podem não funcionar como esperado.
               // - mr-2: Margem à direita de 8px (separa o input da label).
@@ -73,3 +73,5 @@ const FilterGroup = ({ title, inputType, options }) => {
 };
 
 export default FilterGroup;
+
+
