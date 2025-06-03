@@ -13,56 +13,48 @@ import { InputText } from "primereact/inputtext";
 }
 const Header = () => {
   return (
-    <header>
-      <div className="flex gap-5 justify-center max-w-7xl m-30 px-4 py-4">
+    <header className="w-full">
+      <div className="flex gap-2 justify-center mt-10 mb-10">
         <Logo variant="header"/>
         <div className="gap-[20px] flex items-center">
           <IconField iconPosition="right" className="w-[559px]">
             <InputText
-              className="w-[559px] h-[30px] border-none rounded-[14px] p-[6px] pr-10"
+              className="w-[559px] h-[30px] border-none rounded-[14px]"
               placeholder="Pesquisar produto..."
               type="text"
             />
-            <InputIcon className="pi pi-search" />
+            <InputIcon className="cursor-pointer pi pi-search" />
           </IconField>
-          <a href="" className="text-secundary-force text-[14px]">
+          <a href="" className="text-dark-gray-2 hover:text-primary hover:underline text-[14px] font-bold">
             Cadastre-se
           </a>
           <Button
             label="Entrar"
             pt={{
-              root: { className: "bg-primary-force w-[114px] h-[40px]" },
+              root: { className: "bg-primary text-white w-30 h-10 rounded-md" },
             }}
           />
-          <img src={`${import.meta.env.BASE_URL}assets/mini-cart.svg`} alt="Carrinho" />
+          <img className="cursor-pointer" src={`${import.meta.env.BASE_URL}assets/mini-cart.svg`} alt="Carrinho" />
         </div>
       </div>
-      <div>
+      <div className="flex justify-center">
         <nav>
-          <ul className="flex gap-[40px] mt-[40px] ml-[104px] list-none">
+          <ul className="flex gap-[40px] list-none">
             <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `no-underline text-secundary-force font-normal hover:!font-bold transition-all${isActive ? " !font-bold !text-primary-force" : ""}`}>Home</NavLink>
+              <NavLink to="/" className={({ isActive }) => (isActive ? " text-primary underline decoration-2 underline-offset-5 font-bold"
+              : "text-dark-gray-2 font-bold")}>Home</NavLink>
             </li>
             <li>
-              <NavLink
-                to="/produtos"
-                className={({ isActive }) =>
-                  `no-underline text-secundary-force font-normal hover:!font-bold transition-all${isActive ? " !font-bold !text-primary-force" : ""}`}>Produtos</NavLink>
+              <NavLink to="/produtos" className={({ isActive }) => (isActive ? " text-primary underline decoration-2 underline-offset-5 font-bold"
+              : "text-dark-gray-2 font-bold")}>Produtos</NavLink>
             </li>
             <li>
-              <NavLink
-                to="/categorias"
-                className={({ isActive }) =>
-                  `no-underline text-secundary-force font-normal hover:!font-bold transition-all${isActive ? " !font-bold !text-primary-force" : ""}`}>Categorias</NavLink>
+              <NavLink to="/categorias" className={({ isActive }) => (isActive ? " text-primary underline decoration-3 underline-offset-5 font-bold"
+              : "text-dark-gray-2 font-bold")}>Categorias</NavLink>
             </li>
             <li>
-              <NavLink
-                to="/meus-pedidos"
-                className={({ isActive }) =>
-                  `no-underline text-secundary-force font-normal hover:!font-bold transition-all${isActive ? " !font-bold !text-primary-force" : ""}`}>Meus Pedidos</NavLink>
+              <NavLink to="/meus-pedidos" className={({ isActive }) => (isActive ? " text-primary underline decoration-2 underline-offset-5 font-bold"
+              : "text-dark-gray-2 font-bold")}>Meu Pedidos</NavLink>
             </li>
           </ul>
         </nav>
