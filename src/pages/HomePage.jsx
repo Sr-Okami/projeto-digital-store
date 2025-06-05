@@ -1,3 +1,9 @@
+import React from "react";
+import Gallery from "../components/Gallery";
+import Section from "../components/Section";
+import ProductCard from "../components/ProductCard";
+import "../styles/HomePage.css";
+
 const HomePage = () => {
     
     return (
