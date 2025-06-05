@@ -36,47 +36,50 @@ function App() {
         <aside className="w-[308px] h-[720px] flex-col m-[10px] p-[30px] t-[332px] gap-[20px]">
           {" "}
           {/* w-[308px] para a largura da sidebar, space-y-6 para espaçamento entre os grupos */}
-          
-          <FilterGroup 
+          <FilterGroup
             title="Marca"
             inputType="checkbox" // Usar checkboxes para múltiplas seleções
             options={productMarca}
           />
           <FilterGroup
             title="Categoria"
-          inputType="checkbox"
-          options={productCategories}
-        />
-        <FilterGroup
-          title="Gênero"
-          inputType="checkbox"
-          options={productGenero}
-        />
-        <FilterGroup
-          title="Estado"
-          inputType="radio" // Usar radio buttons para seleção única
-          options={brandOptions}
-        />
-      </aside>
+            inputType="checkbox"
+            options={productCategories}
+          />
+          <FilterGroup
+            title="Gênero"
+            inputType="checkbox"
+            options={productGenero}
+          />
+          <FilterGroup
+            title="Estado"
+            inputType="radio" // Usar radio buttons para seleção única
+            options={brandOptions}
+          />
+        </aside>
       </div>
-       {/* Conteúdo principal da página (onde os produtos seriam listados) */}
-
-       <div>
-          <h3> <span className="font-bold">Resultados para “Tênis”-</span> 389 produtos</h3> 
-       </div>
-
-      <main className="flex-grow ml-8 bg-white p-6 rounded-md shadow-md">
+      {/* Conteúdo principal da página (onde os produtos seriam listados) */}
+      <div>
+        <h3 className="w-[338px] h-[28px] t-[248px]">
+          {" "}
+          <span className="font-bold ">Resultados para “Tênis”-</span> 389
+          produtos
+        </h3>
+      </div>
+      <main className="flex-grow ml-8 bg-white p-8 rounded-md shadow-md">
         <section>
           <h1 className="text-2xl font-bold text-gray-800 mb-4">Products</h1>
-          <p className="text-gray-600">List of products will go here, filtered by the selections.</p>
+          <p className="text-gray-600">
+            List of products will go here, filtered by the selections.
+          </p>
+
           {/* Aqui você renderizaria os produtos */}
         </section>
-
+        
+        
       </main>
     </div>
   );
 }
 
 export default App;
-
-

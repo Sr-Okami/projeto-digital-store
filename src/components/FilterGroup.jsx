@@ -1,77 +1,212 @@
-// Definição do componente FilterGroup
-// Ele aceita as props: title, inputType e options
-const FilterGroup = ({ title, inputType, options }) => {
-  // O tipo de input padrão será 'checkbox' se não for fornecido ou for inválido
-  const inputTypeValid = ["checkbox", "radio"].includes(inputType)
-    ? inputType
-    : "checkbox";
-  const validInputType = inputType === "radio" ? "radio" : "checkbox";
-
+const FilterGroup= () => {
   return (
-    <div className="bg-white w-[380px] pt-4 rounded-md shadow-sm">
-      {/* Container principal do grupo de filtros:
-          - bg-white: Fundo branco.
-          - w-[308px]: Largura fixa de 308px (largura de 308px, que é uma classe customizada).
-          - p-4: Preenchimento de 16px (padding) em todas as direções.
-          - rounded-md: Bordas arredondadas suaves.
-          - shadow-sm: Adiciona uma pequena sombra.
-      */}
-      {/* Título do grupo de filtros */}
-      <h3 className="text-dark-gray-2 text-base font-semibold mb-2 m-2">
-        {/*
-          - text-dark-gray-2: Cor do texto (assumindo que 'dark-gray-2' seja uma cor personalizada no Tailwind,
-            caso contrário, use uma cor padrão como 'text-gray-800' ou 'text-gray-900').
-          - text-base: Tamanho da fonte de 16px.
-          - font-semibold: Peso da fonte semi-negrito.
-          - mb-2: Margem inferior de 8px.
-        */}
-        {title}
-      </h3>
+    <>
+      <section>
+       <aside>
+        {/* Título do painel de filtros */}
+        {/* m-[30px] -> Margem de 30px em todas as direções. Considere usar px-8 py-6 para padding interno e mt-8 para margem externa */}
+        <h2 class="w-[700px] h-[24px] m-[30px] text-[16px] leading-[24px] tracking-[0.75px] dark-gray-2 font-[Text Small Bold]">Filtrar por</h2>
+        <hr class="w-[248px] borde" />
 
-      {/* Opções de filtro (checkboxes ou radios) */}
-      <div className="space-y-2">
-        {/* space-y-2: Adiciona um espaçamento vertical de 8px entre os elementos filhos. */}
-
-        {options.map((option, index) => (
-          <label
-            key={option.value || option.text || index}
-            className="flex items-center cursor-pointer"
-          >
-            {/*
-              - label: O elemento <label> HTML.
-              - key: Essencial para listas no React, ajuda a identificar cada item.
-                     Usa option.value, ou option.text, ou o índice como fallback.
-              - flex items-center: Usa Flexbox para alinhar o input e a label na mesma linha verticalmente.
-              - cursor-pointer: Indica que o elemento é clicável.
-            */}
-            <input
-              type={validInputType} // Define o tipo de input (checkbox ou radio)
-              name={title} // 'name' é importante para grupos de radio buttons (garante que apenas um seja selecionável)
-              value={option.value || option.text} // Usa 'value' se existir, se não usa 'text'
-              className="mr-2 h-[22px] w-[22px] g-[10px] form-checkbox text-primary focus:ring-primary rounded"
-              // As classes acima assumem que você configurou o plugin @tailwindcss/forms para 'form-checkbox'.
-              // Caso contrário, algumas classes como 'form-checkbox' e 'rounded' podem não funcionar como esperado.
-              // - mr-2: Margem à direita de 8px (separa o input da label).
-              // - h-[22px] w-[22px]: Altura e largura fixas de 22px.
-              // - form-checkbox: Classe do plugin @tailwindcss/forms para estilizar checkboxes/radios.
-              // - text-primary: Cor do preenchimento do input quando selecionado (assumindo 'primary' seja uma cor personalizada).
-              // - focus:ring-primary: Anel de foco na cor primary.
-              // - rounded: Bordas arredondadas.
-            />
-            <span className="text-dark-gray-2 text-sm">
-              {/*
-                - text-dark-gray-2: Cor do texto da label (igual ao título).
-                - text-sm: Tamanho da fonte da label (14px).
-              */}
-              {option.text}
-            </span>
+        {/* Seção de filtro de Marca */}
+        <div className="mb-6"> {/* Adiciona margem inferior para separar as seções de filtro */}
+          {/* Label do grupo de filtros "Marca" */}
+          {/* m-[30px] -> Margem de 30px, melhor usar padding no contêiner ou p-x */}
+          {/* font-bold -> Negrito */}
+          <label className="m-[30px] font-bold block mb-4" htmlFor=""> {/* Adicionado 'block' e 'mb-4' para espaçamento e quebra de linha */}
+            Marca
           </label>
-        ))}
-      </div>
-    </div>
+          
+          {/* Contêiner para os inputs de marca.
+              flex flex-col -> organiza os itens em uma coluna.
+              space-y-2 -> adiciona um espaçamento vertical de 8px entre os itens filhos diretos.
+              ml-[30px] -> margem à esquerda para alinhar com o título.
+          */}
+          <div className="flex flex-col space-y-2 ml-[30px]">
+            {/* Opção de filtro individual: Adidas */}
+            {/* label -> É o elemento correto para envolver um input e seu texto, tornando toda a área clicável.
+                flex -> Transforma o label em um contêiner flexível.
+                items-center -> Alinha o input e o texto verticalmente ao centro.
+                cursor-pointer -> Indica que o elemento é clicável ao passar o mouse.
+            */}
+            <label className="flex items-center cursor-pointer">
+              {/* input -> O checkbox.
+                  mr-2 -> Adiciona uma margem de 8px (2 * 4px) à direita do input, separando-o do texto.
+                  h-4 w-4 -> Define altura e largura para o checkbox (4 = 16px, padrão Tailwind para inputs)
+                  accent-blue-500 -> (Opcional) Define a cor de destaque do checkbox quando marcado.
+                  form-checkbox -> (Opcional, se você tiver @tailwindcss/forms plugin) Estiliza o checkbox.
+              */}
+              <input
+                className="mr-2 h-4 w-4 accent-blue-500" // Classes Tailwind para posicionamento e tamanho do input
+                type="checkbox"
+                name="marca" // Todos os checkboxes de 'Marca' devem ter o mesmo 'name' para agrupamento lógico
+                value="adidas"
+              />{" "}
+              Adidas
+            </label>
+          
+            {/* Opção de filtro individual: Calenciaga */}
+            <label className="flex items-center cursor-pointer">
+              <input
+                className="mr-2 h-4 w-4 accent-blue-500"
+                type="checkbox"
+                name="marca"
+                value="calenciaga"
+              />{" "}
+              Calenciaga
+            </label>
+          
+            {/* Opção de filtro individual: K-Swiss */}
+            <label className="flex items-center cursor-pointer">
+              <input
+                className="mr-2 h-4 w-4 accent-blue-500"
+                type="checkbox"
+                name="marca"
+                value="kswiss"
+              />{" "}
+              K-Swiss
+            </label>
+          
+            {/* Opção de filtro individual: Nike */}
+            <label className="flex items-center cursor-pointer">
+              <input
+                className="mr-2 h-4 w-4 accent-blue-500"
+                type="checkbox"
+                name="marca"
+                value="nike"
+              />{" "}
+              Nike
+            </label>
+          
+            {/* Opção de filtro individual: Puma */}
+            <label className="flex items-center cursor-pointer">
+              <input
+                className="mr-2 h-4 w-4 accent-blue-500"
+                type="checkbox"
+                name="marca"
+                value="puma"
+              />{" "}
+              Puma
+            </label>
+          </div>
+        </div>
+
+        {/* Você pode repetir a estrutura 'div.mb-6' para outras seções como 'Categoria', 'Gênero', etc. */}
+        {/* Exemplo de outra seção: Categoria */}
+        <div className="mb-6">
+          <label className="m-[30px] font-bold block mb-4" htmlFor="">
+            Categoria
+          </label>
+
+          <div className="flex flex-col space-y-2 ml-[30px]">
+            <label className="flex items-center cursor-pointer">
+              <input
+                className="mr-2 h-4 w-4 accent-blue-500"
+                type="checkbox"
+                name="categoria"
+                value="esporte"
+              />{" "}
+              Esporte e lazer
+            </label>
+
+            <label className="flex items-center cursor-pointer">
+              <input
+                className="mr-2 h-4 w-4 accent-blue-500"
+                type="checkbox"
+                name="categoria"
+                value="casual"
+              />{" "}
+              Casual
+            </label>
+
+            <label className="flex items-center cursor-pointer">
+              <input
+                className="mr-2 h-4 w-4 accent-blue-500"
+                type="checkbox"
+                name="categoria"
+                value="utilitario"
+              />{" "}
+              Utilitário
+            </label>
+
+            <label className="flex items-center cursor-pointer">
+              <input
+                className="mr-2 h-4 w-4 accent-blue-500"
+                type="checkbox"
+                name="categoria"
+                value="corrida"
+              />{" "}
+              Corrida
+            </label>
+                                  
+          </div>
+
+        {/* ...outras categorias */}
+          <div className="mb-6">
+          <label className="m-[30px] font-bold block mb-4">
+            Gênero
+          </label>
+          <div className="flex flex-col space-y-2 ml-[30px]">
+            <label className="flex items-center cursor-pointer">
+              <input
+                className="mr-2 h-4 w-4 accent-blue-500"
+                type="checkbox"
+                name="genero"
+                value="masculino"
+              /> Masculino
+            </label>
+            <label className="flex items-center cursor-pointer">
+              <input
+                className="mr-2 h-4 w-4 accent-blue-500"
+                type="checkbox"
+                name="genero"
+                value="feminino"
+              /> Feminino
+            </label>
+
+            <label className="flex items-center cursor-pointer">
+              <input
+                className="mr-2 h-4 w-4 accent-blue-500"
+                type="checkbox"
+                name="genero"
+                value="unisex"
+              /> Unisex
+            </label>
+          </div>
+        </div>
+
+          <div className="mb-6">
+          <label className="m-[30px] font-bold block mb-4">
+            Estado
+          </label>
+          <div className="flex flex-col space-y-2 ml-[30px]">
+            <label className="flex items-center cursor-pointer">
+              <input
+                className="mr-2 h-4 w-4 accent-blue-500"
+                type="radio"
+                name="genero"
+                value="novo"
+              /> Novo
+            </label>
+            <label className="flex items-center cursor-pointer">
+              <input
+                className="mr-2 h-4 w-4 accent-blue-500"
+                type="radio"
+                name="genero"
+                value="usado"
+              /> Usado
+            </label>
+
+            
+          </div>
+        </div>
+          
+        </div>
+
+      </aside>
+      </section>
+    </>
   );
 };
 
 export default FilterGroup;
-
-
