@@ -1,8 +1,3 @@
-import React from "react";
-import Gallery from "../components/Gallery";
-import Section from "../components/Section";
-import "../styles/Homepage.css"
-
 const HomePage = () => {
     
     return (
@@ -20,6 +15,7 @@ const HomePage = () => {
                     </div>
                     </Section>
                 </div>
+                
                 {/*Coleções em destaque com 5 imagens*/}
                 <div className="justify-center flex mt-8">
                     <Section title="Coleções em destaque" titleAlign="center">
@@ -47,15 +43,25 @@ const HomePage = () => {
                         </div>
                     </Section>
                 </div>
+                
                 <div className="mt-10">
                     <Section
                         title="Produtos em alta"
                         titleAlign="center"
                         link={{ href: "#", text: "Ver tudo →" }}
                     >
-                    <div>
-                        {/*Nesse espaço serão os productscards */}
-                    </div>
+                        <div className="px-4">
+                            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto gap-8 mt-8">
+                                <ProductCard title="30% OFF" />
+                                <ProductCard title="30% OFF" />
+                                <ProductCard />
+                                <ProductCard />
+                                <ProductCard />
+                                <ProductCard />
+                                <ProductCard />
+                                <ProductCard />
+                            </div>
+                        </div>
                     </Section>
                 </div>
             </section>
