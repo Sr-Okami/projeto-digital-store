@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "primereact/button";
 import { Carousel } from 'primereact/carousel';
 import "../styles/Homepage.css"
+import ProductCard from "../components/ProductCard";
 
 const HomePage = () => {
     const banners = [
@@ -121,7 +122,19 @@ const HomePage = () => {
                     <h2 className="font-bold text-dark-gray-2 text-2xl">Produtos em alta</h2>
                     <a className="text-primary" href="#">Ver todos →</a>
                 </div>
-                <div>
+                
+                 <div className="px-4">
+                                   
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto gap-8 mt-8">
+        <ProductCard title="30% OFF" />
+        <ProductCard title="30% OFF" />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
                 
                 </div>
             </div>
