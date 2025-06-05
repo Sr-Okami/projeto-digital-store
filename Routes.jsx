@@ -5,7 +5,7 @@ import HomePage from "./src/pages/HomePage.jsx";
 import ProductListingPage from "./src/pages/ProductListingPage.jsx";
 import ProductViewPage from "./src/pages/ProductViewPage.jsx";
 
-const App = () => (
+const Rotas = () => (
   console.log("Foi renderizado o App"),
   <Routes>
     <Route path="/" element={<Layout />}>
@@ -19,4 +19,4 @@ const App = () => (
   </Routes>
 );
 
-export default App;
+export default Rotas;
