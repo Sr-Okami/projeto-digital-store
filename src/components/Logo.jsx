@@ -8,8 +8,9 @@ const Logo = ({ variant = "header", ...props }) => {
             : `${import.meta.env.BASE_URL}assets/logo-header.svg`;
     return (
         <img
-            height={44}
-            width={253}
+            className='w-[150px] xl:w-[253px] lg:w-[253px]  '
+            /*height={44}
+            width={253}*/
             src={src}
             alt={`Logo ${variant}`}
             {...props}
