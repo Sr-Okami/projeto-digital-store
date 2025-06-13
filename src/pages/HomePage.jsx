@@ -14,10 +14,10 @@ const HomePage = () => {
             <section>
                 <div>
                     <Section title="Coleções em destaque">
-                    <div className="flex gap-10 justify-center">
-                        <img src={`${import.meta.env.BASE_URL}assets/Img/collection-1.png`} alt="Coleção" className=" h-[200px] shadow-[0px_11px_17px_0px_#C92071] cursor-pointer" />
-                        <img src={`${import.meta.env.BASE_URL}assets/Img/collection-2.png`} alt="Coleção" className=" h-[200px] shadow-[0px_11px_17px_0px_#C92071] cursor-pointer" />
-                        <img src={`${import.meta.env.BASE_URL}assets/Img/collection-3.png`} alt="Coleção" className=" h-[200px] shadow-[0px_11px_17px_0px_#C92071] cursor-pointer" />
+                    <div className="flex lg:gap-10 gap-5 lg:justify-center lg:flex-row flex-col-reverse items-center">
+                        <img src={`${import.meta.env.BASE_URL}assets/Img/collection-1.png`} alt="Coleção" className=" lg:h-[200px] lg:w-[300px] h-30 w-50 shadow-[0px_11px_17px_0px_#C92071] cursor-pointer" />
+                        <img src={`${import.meta.env.BASE_URL}assets/Img/collection-2.png`} alt="Coleção" className=" lg:h-[200px] lg:w-[300px] h-30 w-50 shadow-[0px_11px_17px_0px_#C92071] cursor-pointer" />
+                        <img src={`${import.meta.env.BASE_URL}assets/Img/collection-3.png`} alt="Coleção" className=" lg:h-[200px] lg:w-[300px] h-30 w-50 shadow-[0px_11px_17px_0px_#C92071] cursor-pointer" />
                     </div>
                     </Section>
                 </div>
@@ -25,7 +25,7 @@ const HomePage = () => {
                 {/*Coleções em destaque com 5 imagens*/}
                 <div className="justify-center flex mt-8">
                     <Section title="Coleções em destaque" titleAlign="center">
-                        <div className="mt-3 flex gap-20 justify-center">
+                        <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center">
                             <div className="flex flex-col items-center">
                                 <img src="../public/assets/Vector1.svg" alt="Camisa"/>
                                 <span className="text-dark-gray-2 text-1xl font-bold mt-3.5">Camisetas</span>
