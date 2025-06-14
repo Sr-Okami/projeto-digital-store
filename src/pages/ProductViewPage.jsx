@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import IconsStar from "../components/IconsStar";
 import IconStarSimple from "../components/IconStarSimple";
-import ButtonSale from "../components/ButtonSale";
+import { Button } from 'primereact/button';
 import CarouselProducts from "../components/CarouselProducts";
 import ProdutosRelacionados from "../components/ProdutosRelacionados";
 import ProductCard from "../components/ProductCard";
@@ -101,9 +101,11 @@ const ProductViewPage = () => {
               ))}
             </div>
             <div>
-              <ButtonSale
-                title="Comprar"
-                className="bg-[#ffb31f] font-semibold mt-5 w-full sm:w-auto"
+              <Button
+                label="Comprar"
+                pt={{
+                root: { className: "bg-warning text-white mt-5 w-50 h-10 rounded-md hidden lg:block" },
+                }}
               />
             </div>
           </div>

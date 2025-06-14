@@ -139,8 +139,8 @@ const ProductListingPage = () => {
                         
             >
               <div className="px-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto gap-8 mt-8">
-                  {products.slice(0, 15).map((product) => (
+                <div className="">
+                  {products.slice(0, 2).map((product) => (
                     <ProductCard
                       key={product.id}
                       name={product.Nome}
