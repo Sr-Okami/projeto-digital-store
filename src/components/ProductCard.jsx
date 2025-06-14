@@ -34,7 +34,7 @@ const ProductCard = ({ className, title, containerClass, imageClass, textClass, 
       )}
 
       <div className={`w-full max-w-[280px] aspect-square flex items-center justify-center mx-auto flex-col ${className} ${containerClass}`}>
-        <img
+        <img 
           src="..\public\assets\produto2.png"
           alt="Tênis"
           className={`rotate-320 max-w-[60%] max-h-[60%] transition-transform duration-300 ease-in-out transform hover:scale-105 object-contain mx-auto cursor-pointer ${imageClass}`}
