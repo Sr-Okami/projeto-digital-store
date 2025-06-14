@@ -2,7 +2,7 @@
     {
         "id": 1,
         "Categoria": "Tênis",
-        "imagem": "public/assets/Img/produc-image-1.jpeg",
+        "imagem": "public/assets/Img/produc-image-1.png",
         "Nome": "K-Swiss V8 - Masculino",
         "Preco": 249.90,
         "PrecoDesconto": 199.90
@@ -10,7 +10,7 @@
     {
         "id": 2,
         "Categoria": "Tênis",
-        "imagem": "public/assets/Img/produc-image-2.jpeg",
+        "imagem": "public/assets/Img/produc-image-2.png",
         "Nome": "K-Swiss V8 - Masculino",
         "Preco": 899.90,
         "PrecoDesconto": 759.90
@@ -18,7 +18,7 @@
     {
         "id": 3,
         "Categoria": "Tênis",
-        "imagem": "public/assets/Img/produc-image-3.jpeg",
+        "imagem": "public/assets/Img/produc-image-3.png",
         "Nome": "K-Swiss V8 - Masculino",
         "Preco": 799.00,
         "PrecoDesconto": 699.00
@@ -26,7 +26,7 @@
     {
         "id": 4,
         "Categoria": "Tênis",
-        "imagem": "public/assets/Img/produc-image-4.jpeg",
+        "imagem": "public/assets/Img/produc-image-4.png",
         "Nome": "K-Swiss V8 - Masculino",
         "Preco": 349.90,
         "PrecoDesconto": 279.90
@@ -34,7 +34,7 @@
     {
         "id": 5,
         "Categoria": "Tênis",
-        "imagem": "public/assets/Img/produc-image-5.jpeg",
+        "imagem": "public/assets/Img/produc-image-5.png",
         "Nome": "K-Swiss V8 - Masculino",
         "Preco": 599.90,
         "PrecoDesconto": 499.90
@@ -42,14 +42,14 @@
     {
         "id": 6,
         "Categoria": "Tênis",
-        "imagem": "public/assets/Img/produc-image-2.jpeg",
+        "imagem": "public/assets/Img/produc-image-2.png",
         "Nome": "K-Swiss V8 - Masculino",
         "Preco": 699.90,
         "PrecoDesconto": 599.90
     },
     {
         "id": 7,
-        "imagem": "public/assets/Img/produc-image-4.jpeg",
+        "imagem": "public/assets/Img/produc-image-4.png",
         "Categoria": "Tênis",
         "Nome": "K-Swiss V8 - Masculino",
         "Preco": 349.90,
@@ -57,7 +57,7 @@
     },
     {
         "id": 8,
-        "imagem": "public/assets/Img/produc-image-1.jpeg",
+        "imagem": "public/assets/Img/produc-image-1.png",
         "Categoria": "Tênis",
         "Nome": "K-Swiss V8 - Masculino",
         "Preco": 649.90,
