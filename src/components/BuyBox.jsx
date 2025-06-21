@@ -51,7 +51,7 @@ const BuyBox = ({ produto }) => { // Recebendo produto como prop
       <div className="pt-4">
         <Button
           label="Comprar"
-          className="bg-warning text-white mt-5 w-50 h-10 rounded-md hidden lg:block transition duration-500 hover:brightness-110 hover:scale-105"
+          className="bg-warning text-white mt-5 w-50 h-10 rounded-md transition duration-500 hover:brightness-110 hover:scale-105"
         />
       </div>
     </div>

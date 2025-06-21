@@ -28,21 +28,26 @@ const Footer = () => {
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
                         </p>
                         <div className="flex gap-[20px] mt-[10px] justify-center lg:justify-start">
-                          <img 
+                          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                            <img 
                             className="cursor-pointer hover:opacity-80 transition-opacity" 
                             src={`${import.meta.env.BASE_URL}assets/facebook.svg`} 
                             alt="Facebook" 
                           />
-                          <img 
+                          </a>
+                          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                            <img 
                             className="cursor-pointer hover:opacity-80 transition-opacity" 
                             src={`${import.meta.env.BASE_URL}assets/instagram.svg`} 
                             alt="Instagram" 
                           />
+                          </a>
+                          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                           <img 
                             className="cursor-pointer hover:opacity-80 transition-opacity" 
                             src={`${import.meta.env.BASE_URL}assets/twitter.svg`} 
-                            alt="Twitter" 
-                          />
+                            alt="x (Twitter)" 
+                          /></a>
                         </div>
                     </div>
                     

@@ -45,7 +45,7 @@ const ProductViewPage = () => {
         <div className="grid grid-cols-1 md:flex gap-3 mt-5 w-full">
           <ProductCard />
         </div>
-    </Section>
+    
       
       </div>
       

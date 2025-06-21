@@ -44,9 +44,25 @@ const Header = () => {
         />
         </Link>
 
-        {/* Ícone do carrinho - não funciona :( */}
-        <Badge value="2" className="bg-primary hidden lg:block"></Badge>
-        <img className="cursor-pointer" src={`/assets/mini-cart.svg`} alt="Carrinho" />
+       {/* Ícone do carrinho - corrigido */}
+        <div className="relative">
+          <img 
+            className="cursor-pointer" 
+            src={`${import.meta.env.BASE_URL}assets/mini-cart.svg`} 
+            alt="Carrinho" 
+          />
+          <Badge 
+            value="2" 
+            className="absolute -top-1 -right-1 text-xs min-w-[16px] h-4 flex items-center justify-center"
+            severity="danger"
+            style={{ 
+              fontSize: '10px',
+              minWidth: '16px',
+              height: '16px',
+              padding: '0 0px'
+            }}
+          />
+        </div>
         
 
       </div>

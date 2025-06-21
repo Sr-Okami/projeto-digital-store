@@ -45,7 +45,7 @@ const ProductListingPage = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
+    <div className="flex flex-col md:flex-row min-h-screen bg-gray-50 relative">
       {/* Sidebar de filtros - só aparece em md+ */}
       <aside
         className="
@@ -69,20 +69,21 @@ const ProductListingPage = () => {
       {/* Drawer de filtro para mobile */}
       {showFilter && (
         <>
-          {/* Fundo escurecido/transparente */}
+          {/* Fundo translúcido */}
           <div
-            className="fixed inset-0 bg-black bg-opacity-40 z-40"
+            className="fixed inset-0 bg-black/30 z-[100]"
             onClick={() => setShowFilter(false)}
           />
           {/* Drawer lateral da esquerda para a direita */}
           <aside
             className="
-              fixed top-0 left-0 h-full w-[320px] max-w-full bg-white z-50
+              fixed top-0 left-0 h-full w-[320px] max-w-full bg-white z-[110]
               flex flex-col
               transition-transform duration-300
               p-6
               rounded-tr-xl rounded-br-xl
               sm:hidden
+              shadow-2xl
             "
           >
             <FilterGroup
@@ -91,7 +92,7 @@ const ProductListingPage = () => {
               onClose={() => setShowFilter(false)}
             />
             <button
-              className="mt-6 w-full bg-pink-600 text-white rounded py-2 font-semibold"
+              className="mt-6 w-full bg-pink-600 text-white rounded py-2 font-semibold hover:bg-pink-700 transition-colors"
               onClick={() => setShowFilter(false)}
             >
               Aplicar filtros
@@ -101,9 +102,14 @@ const ProductListingPage = () => {
       )}
 
       {/* Conteúdo principal */}
-      <main className="flex-1 w-full px-4 py-6">
+      <main 
+        className={`
+          flex-1 w-full px-4 py-6 relative
+          ${showFilter ? 'sm:relative' : ''}
+        `}
+      >
         {/* Bloco responsivo de ordenação, filtro e resultado */}
-        <div className="mb-6">
+        <div className="mb-6 relative z-10">
           {/* Linha de cima no mobile: select + botão filtro */}
           <div className="flex flex-row justify-between items-center sm:justify-end gap-4">
             <SortFilterPureCSS
@@ -118,7 +124,7 @@ const ProductListingPage = () => {
             />
             {/* Botão filtro só no mobile */}
             <button
-              className="sm:hidden flex items-center justify-center w-12 h-12 bg-pink-600 hover:bg-pink-700 rounded-xl"
+              className="sm:hidden flex items-center justify-center w-12 h-12 bg-pink-600 hover:bg-pink-700 rounded-xl transition-colors relative z-20"
               onClick={() => setShowFilter(true)}
               aria-label="Abrir filtros"
               type="button"
@@ -129,23 +135,19 @@ const ProductListingPage = () => {
           {/* Linha de baixo no mobile: resultado centralizado; no desktop: alinhado à esquerda */}
           <div className="flex justify-center sm:justify-start mt-4">
             <div className="flex items-center">
-              <span className=" font-bold font-inter
-    text-[14px] leading-[22px] tracking-[0.75px]
-    sm:text-xl sm:leading-6
-    mr-2">
-                Resultados para “Tênis”
+              <span className="font-bold font-inter text-[14px] leading-[22px] tracking-[0.75px] sm:text-xl sm:leading-6 mr-2">
+                Resultados para "Tênis"
               </span>
-              <span className=" text-gray-500
-    font-inter
-    text-[14px] leading-[22px] tracking-[0.25px] font-normal
-    sm:text-xl sm:leading-6 sm:tracking-normal sm:font-medium">
+              <span className="text-gray-500 font-inter text-[14px] leading-[22px] tracking-[0.25px] font-normal sm:text-xl sm:leading-6 sm:tracking-normal sm:font-medium">
                 - {quantidadeProdutos} produto{quantidadeProdutos !== 1 ? "s" : ""}
               </span>
             </div>
           </div>
         </div>
         {/* Listagem de produtos */}
-        <ProductListing filters={currentFilters} sortOrder={sortOrder} />
+        <div className="relative z-10">
+          <ProductListing filters={currentFilters} sortOrder={sortOrder} />
+        </div>
       </main>
     </div>
   );

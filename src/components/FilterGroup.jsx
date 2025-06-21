@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const marcas = ["Adiddas", "Calenciaga", "K-Swiss", "Nike", "Puma"];
 const categorias = ["Esporte e lazer", "Casual", "Utilitário", "Corrida"];
@@ -6,10 +6,32 @@ const generos = ["Masculino", "Feminino", "Unisex"];
 const estados = ["Novo", "Usado"];
 
 const FilterGroup = ({ onFilterChange, currentFilters, onClose }) => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const handleWheel = (e) => {
+      if (containerRef.current) {
+        e.preventDefault();
+        containerRef.current.scrollTop += e.deltaY;
+      }
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('wheel', handleWheel, { passive: false });
+      return () => {
+        container.removeEventListener('wheel', handleWheel);
+      };
+    }
+  }, []);
+
   return (
-    <div className="flex flex-col p-4  rounded shadow-md w-full sm:w-[308px] bg-[#FFFFFF]">
+    <div 
+      ref={containerRef}
+      className="flex flex-col p-4 rounded shadow-md w-full sm:w-[300px] bg-[#FFFFFF] max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
+    >
       {/* Título e botão X (só no mobile) */}
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-4 sticky top-0 bg-white z-10">
         <span className="font-bold text-[16px] leading-6 tracking-[0.75px] font-inter">
           Filtrar por
         </span>
@@ -22,7 +44,7 @@ const FilterGroup = ({ onFilterChange, currentFilters, onClose }) => {
         </button>
       </div>
       <hr className="mb-4 w-[248px] border-t border-[#CCCCCC]" />
-
+      
       {/* Marca */}
       <div className="flex flex-col w-[120px] h-[182px] gap-[10px] mb-[50px]">
         <div className="font-bold mb-2">Marca</div>
@@ -40,7 +62,7 @@ const FilterGroup = ({ onFilterChange, currentFilters, onClose }) => {
           </label>
         ))}
       </div>
-
+      
       {/* Categoria */}
       <div className="flex flex-col w-[180px] h-[150px] gap-[10px] mb-[50px]">
         <div className="font-bold mb-2">Categoria</div>
@@ -58,7 +80,7 @@ const FilterGroup = ({ onFilterChange, currentFilters, onClose }) => {
           </label>
         ))}
       </div>
-
+      
       {/* Gênero */}
       <div className="flex flex-col w-[103px] h-[118px] gap-[10px] mb-[50px]">
         <div className="font-bold mb-2">Gênero</div>
@@ -76,7 +98,7 @@ const FilterGroup = ({ onFilterChange, currentFilters, onClose }) => {
           </label>
         ))}
       </div>
-
+      
       {/* Estado */}
       <div className="flex flex-col w-[90px] h-[100px] gap-[10px] mb-[50px]">
         <div className="font-bold mb-2">Estado</div>

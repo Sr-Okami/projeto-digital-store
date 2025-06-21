@@ -1,58 +1,66 @@
-Projeto Front-end: Digital Store 🛒
+# Digital Store
 
-Este é o projeto de Front-end desenvolvido como parte da avaliação final do curso de Desenvolvimento Web Full Stack do Geração Tech. Nosso objetivo foi aplicar e consolidar os conhecimentos adquiridos ao longo da jornada, construindo uma aplicação web robusta e moderna, focada na experiência do usuário e nas melhores práticas de desenvolvimento.
+Projeto de e-commerce desenvolvido como avaliação final do curso da Geração Tech.
 
-O projeto se baseia no universo do e-commerce, explorando conceitos visuais e funcionais inspirados no design disponível no Figma.
+## Sobre
 
-Sobre o Projeto 🚀
+Uma aplicação web de loja virtual com as principais funcionalidades de um e-commerce moderno, criada para demonstrar conhecimentos em desenvolvimento front-end.
 
-Este desafio nos permitiu mergulhar na criação de uma interface de usuário dinâmica e responsiva. Implementamos funcionalidades essenciais para simular um ambiente de loja online, desde a navegação pelos produtos até a visualização detalhada de cada item.
+## Funcionalidades
 
-Funcionalidades Implementadas ✨
+- Página inicial
+- Lista de produtos
+- Detalhes do produto
+- Login e cadastro
+- Página de erro 404
 
-A aplicação conta com as seguintes seções principais, garantindo uma jornada completa para o usuário:
-•	Página Inicial: A vitrine da loja, projetada para cativar o usuário e direcioná-lo para os produtos.
-•	Página de Listagem de Produtos: Uma seção dedicada à exibição de todos os produtos, permitindo uma navegação intuitiva.
-•	Página de Visualização do Produto: Onde os detalhes de cada item são apresentados de forma clara e completa.
+## Tecnologias
 
-Tecnologias Utilizadas 🛠️
+- React
+- Tailwind CSS
+- React Router DOM
+- Vite
+- PrimeReact
+- Phosphor Icons
 
-Para a construção deste projeto, escolhemos as seguintes tecnologias, buscando performance, escalabilidade e manutenibilidade:
-•	Phosphor-icons
-•	Prime Flex
-•	Prime Icons
-•	React
-•	React Router DOM
-•	Tailwind
-•	Vite
+## Estrutura principal do Projeto
 
-Como Executar o Projeto ▶️
+```
+public/
+├── assets/
+│   └── Img/
+├── fonts/
+src/
+├── components/        
+├── pages/            
+├── styles/            
+└── styles/
+index.html
+index.jsx            
+Routes.jsx
+```
 
-Certifique-se de ter o Node.js instalado em sua máquina
-1 - Clone o repositório em:
-https://github.com/Sr-Okami/projeto-digital-store.git
+## Como executar
 
-2 - Instale as dependências
+1. Clone o repositório:
+```bash
+git clone https://github.com/Sr-Okami/projeto-digital-store.git
+```
 
+2. Instale as dependências:
+```bash
 npm install
+```
 
-3 - Rode o projeto em ambiente de desenvolvimento
+3. Execute o projeto:
+```bash
+npm run dev
+```
 
-npm run dev 
+4. Acesse: http://localhost:5173
 
-4 - A aplicação estará disponível em http://localhost:5173
+## Equipe
 
-
-Você pode acessar a versão online do projeto clicando abaixo:
-
-👉 Acesse a Digital Store aqui:  https://projeto-digital-store-self.vercel.app/
-
-
-
-Membros da Equipe 🧑‍💻
-
-•	Matheus de Sousa (https://github.com/Sr-Okami)
-•	Jéssica Oliveira da Costa Lima (https://github.com/Jessica-dev21)
-•	Ana Lucia de Mendonça Estima (https://github.com/anaestima)
-
-______________________________________________________________________________________
+- Matheus de Sousa Nascimento - [GitHub](https://github.com/Sr-Okami)
+- Jéssica Oliveira da Costa Lima - [GitHub](https://github.com/Jessica-dev21)
+- Ana Lucia de Mendonça Estima - [GitHub](https://github.com/anaestima)
