@@ -54,7 +54,7 @@ const HomePage = () => {
                     <Section
                         title="Produtos em alta"
                         titleAlign="center"
-                        link={{ href: "#", text: "Ver tudo →" }}
+                        link={{ text: "Ver tudo →", href: "/produtos" }}
                     >
                         <div className="px-4">
                             <div className="">
