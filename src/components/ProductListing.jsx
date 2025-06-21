@@ -52,7 +52,7 @@ const ResultadosInfo = ({ quantidade }) => {
   );
 };
 
-const ProductListingPage = () => {
+const ProductListing = () => {
   // Estado para os produtos atualmente exibidos
   const [products, setProducts] = useState([]);
   // Estado para a ordem de classificação selecionada
@@ -112,11 +112,12 @@ const ProductListingPage = () => {
 
   return (
     <Layout>
+      
       <div className="container mx-auto px-4 py-8">
         {/* Layout principal sem painel de filtros */}
         <div className="w-full">
           {/* Header com informações e ordenação */}
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
+          {/* <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
             <ResultadosInfo quantidade={products.length} />
             <SortFilterPureCSS
               label="Ordenar por"
@@ -124,7 +125,7 @@ const ProductListingPage = () => {
               defaultValue={sortOrder}
               onSelect={handleSortChange}
             />
-          </div>
+          </div> */}
 
           {/* Loading state */}
           {isLoading && (
@@ -165,4 +166,4 @@ const ProductListingPage = () => {
   );
 };
 
-export default ProductListingPage;
+export default ProductListing;

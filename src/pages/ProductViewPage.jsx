@@ -117,9 +117,7 @@ const ProductViewPage = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:flex gap-3 mt-5 w-full">
           <ProductCard title="30% OFF" />
-          <ProductCard title="30% OFF" />
-          <ProductCard />
-          <ProductCard />
+      
         </div>
       </div>
     </div>
