@@ -57,7 +57,7 @@ npm install
 npm run dev
 ```
 
-4. Acesse: http://localhost:5173
+4. Acesse o link que o terminal responder.
 
 ## Equipe
 
