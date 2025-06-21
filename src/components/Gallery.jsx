@@ -1,70 +1,147 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Carousel } from "primereact/carousel";
 import { Button } from "primereact/button";
-import "../styles/index.css"
+import { Link } from "react-router-dom";
 
-const banners = [
-  {
-    subtitulo: "Melhores ofertas personalizadas",
-    titulo: "Queima de estoque Nike 🔥",
-    descricao: "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
-    imagem: `${import.meta.env.BASE_URL}assets/Img/White-Sneakers-PNG-Clipart 1.png`,
-    detalhe: `${import.meta.env.BASE_URL}assets/Img/Ornament 11.png`
-  },
-  {
-    imagem: `${import.meta.env.BASE_URL}assets/Img/home-slide-1.jpeg`,
-  },
-  {
-    imagem: `${import.meta.env.BASE_URL}assets/Img/home-slide-2.jpeg`,
-  },
-  {
-    imagem: `${import.meta.env.BASE_URL}assets/Img/home-slide-3.jpeg`,
-  },
-  {
-    imagem: `${import.meta.env.BASE_URL}assets/Img/home-slide-4.jpeg`,
-  },
-];
+const Gallery = ({ images, colors, produtoImagem }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
 
-const bannerTemplate = (banner) => {
-  if (!banner.subtitulo && !banner.titulo && !banner.descricao) {
+  const ModoProduto = produtoImagem && colors?.length;
+  const slides = ModoProduto
+    ? colors.map((color) => ({ imagem: produtoImagem, color }))
+    : images;
+
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [slides?.length]);
+
+  const renderSlide = (item) => {
+    if (item.color) {
+      return (
+        <div className="flex justify-center items-center h-[400px]">
+          <div
+            className="rounded-xl overflow-hidden flex items-center justify-center"
+            style={{ width: 350, height: 350, background: item.color }}
+          >
+            <img
+              src={item.imagem}
+              alt="Produto"
+              className="max-h-[250px] object-contain"
+              style={{ width: "80%", height: "80%" }}
+            />
+          </div>
+        </div>
+      );
+    }
+    if (item.titulo || item.subtitulo || item.descricao) {
+      return (
+        <div className="relative flex items-center">
+          <div className="max-w-[500px]">
+            {item.subtitulo && (
+              <p className="text-[16px] mb-[20px] text-warning">
+                {item.subtitulo}
+              </p>
+            )}
+            {item.titulo && (
+              <p className="text-[64px] max-w-[500px] mb-[20px] font-bold">
+                {item.titulo}
+              </p>
+            )}
+            {item.descricao && (
+              <p className="text-[18px] max-w-[450px] mb-[20px]">
+                {item.descricao}
+              </p>
+            )}
+            <Link to="/produtos">
+              <Button
+                label="Ver Ofertas"
+                className="w-[220px] h-[48px] bg-primary text-white rounded-md"
+              />
+            </Link>
+          </div>
+          <div>
+            <img
+              src={item.imagem}
+              alt="Banner"
+              className="absolute left-[450px] top-[190px] -translate-y-1/2 w-[60%]"
+            />
+            {item.detalhe && (
+              <img
+                src={item.detalhe}
+                alt="Ornamento"
+                className="absolute left-[1000px] top-[60px] -translate-y-1/2 w-[10%]"
+              />
+            )}
+          </div>
+        </div>
+      );
+    }
     return (
-      <div className="flex justify-center items-center h-[400px] relative">
-        <img src={banner.imagem} alt="Banner" className="max-h-[350px] object-contain" />
+      <div className="flex justify-center items-center h-[400px]">
+        <img
+          src={item.imagem}
+          alt="Imagem"
+          className="max-h-[350px] object-contain"
+        />
       </div>
     );
-  }
+  };
+
+  const renderThumbnails = () => (
+    <div className="flex justify-center gap-2 mt-4">
+      {slides.map((slide, idx) => (
+        <button
+          key={idx}
+          onClick={() => setActiveIndex(idx)}
+          className={`border-2 rounded p-0.5 ${
+            activeIndex === idx ? "border-primary" : "border-gray-300"
+          }`}
+          style={{ background: slide.color || "#fff" }}
+        >
+          <img
+            src={slide.imagem}
+            alt={`Miniatura ${idx + 1}`}
+            className="w-12 h-12 object-contain"
+          />
+        </button>
+      ))}
+    </div>
+  );
+
+  if (!slides?.length) return null;
 
   return (
-    <div className="relative flex items-center ">
-      <div className="max-w-[500px]">
-        <p className="text-[16px] mb-[20px] text-warning">{banner.subtitulo}</p>
-        <p className="text-[64px] max-w-[500px] mb-[20px] font-bold">{banner.titulo}</p>
-        <p className="text-[18px] max-w-[450px] mb-[20px]">{banner.descricao}</p>
-        <Button label="Ver Ofertas" className="w-[220px] h-[48px] bg-primary text-white rounded-md"/>
-      </div>
-      <div>
-        <img src={banner.imagem} alt="Tênis" className="absolute left-[450px] top-[190px] -translate-y-1/2 w-[60%]"/>
-        {banner.detalhe && (
-          <img src={banner.detalhe} alt="Ornamento" className="absolute left-[1000px] top-[60px] -translate-y-1/2 w-[10%]"/>
-        )}
-      </div>
+    <div className="justify-center">
+      {!ModoProduto ? (
+        <Carousel
+          key={slides.length + "-home"}
+          value={slides}
+          numVisible={1}
+          numScroll={1}
+          autoplayInterval={5000}
+          circular
+          showIndicators
+          orientation="horizontal"
+          showNavigators={true}
+          itemTemplate={renderSlide}
+        />
+      ) : (
+        <Carousel
+          key={slides.length + "-produto"}
+          value={slides}
+          numVisible={1}
+          numScroll={1}
+          circular={false}
+          showIndicators={false}
+          showNavigators={false}
+          itemTemplate={renderSlide}
+          page={activeIndex}
+          onPageChange={(e) => setActiveIndex(e.page)}
+        />
+      )}
+      {ModoProduto && renderThumbnails()}
     </div>
   );
 };
-
-const Gallery = () => (
-  <div className="justify-center">
-    <Carousel 
-      value={banners.slice(0, 4)}
-      itemTemplate={bannerTemplate}
-      numVisible={1}
-      numScroll={1}
-      autoplayInterval={5000}
-      circular
-      showIndicators
-      showNavigators={false}
-    /> 
-  </div>
-);
 
 export default Gallery;
