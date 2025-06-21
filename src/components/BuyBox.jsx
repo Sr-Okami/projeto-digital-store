@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'primereact/button';
 import ProductOptions from './ProductOptions';
 import IconsStar from './IconsStar';
+import ProductDetails from './ProductDetails';
 
 const BuyBox = ({ produto }) => { // Recebendo produto como prop
   // Verificação de segurança caso produto seja undefined
@@ -31,10 +32,7 @@ const BuyBox = ({ produto }) => { // Recebendo produto como prop
         <p className="text-xs text-gray-400">({produto.Visualizacaos} avaliações)</p>
       </div>
       <div className="flex items-baseline gap-2">
-        <h2 className="text-xl font-bold">
-          <span className="text-sm pr-1">R$</span>
-          {produto.PrecoDesconto.toFixed(2)}
-        </h2>
+        <ProductDetails/>
         <span className="text-gray-400 line-through text-sm">
           R$ {produto.Preco.toFixed(2)}
         </span>
