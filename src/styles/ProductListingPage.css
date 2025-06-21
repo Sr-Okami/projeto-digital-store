@@ -1,0 +1,40 @@
+/* Estilos padrão para desktop e notebooks */
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  /* ...outros estilos... */
+}
+
+/* Laptops pequenos e tablets em paisagem (largura até 1024px) */
+@media (max-width: 1024px) {
+  body {
+    font-size: 15px;
+    /* Ajuste outros elementos conforme necessário */
+  }
+}
+
+/* Tablets (largura até 768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    padding: 10px;
+    flex-direction: column;
+  }
+}
+
+/* Celulares (largura até 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+  .container {
+    padding: 5px;
+  }
+  .produto {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}

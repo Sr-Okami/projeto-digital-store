@@ -1,98 +1,102 @@
-// src/components/FilterPanel/FilterPanel.jsx
-import React from 'react';
-import '../styles/FilterGroup.css';
+import React from "react";
 
-const FilterGroup = ({ onFilterChange, currentFilters }) => {
-  const filterOptions = {
-    brand: [
-      { value: 'Nike', label: 'Nike' },
-      { value: 'Adidas', label: 'Adidas' },
-      { value: 'Puma', label: 'Puma' },
-      { value: 'Balenciaga', label: 'Balenciaga' }
-    ],
-    category: [
-      { value: 'corrida', label: 'Corrida' },
-      { value: 'casual', label: 'Casual' },
-      { value: 'utilitario', label: 'Utilitário' },
-      { value: 'esporte', label: 'Esporte' }
-    ],
-    gender: [
-      { value: 'masculino', label: 'Masculino' },
-      { value: 'feminino', label: 'Feminino' },
-      { value: 'unissex', label: 'Unissex' }
-    ],
-    condition: [
-      { value: 'novo', label: 'Novo' },
-      { value: 'usado', label: 'Usado' }
-    ]
-  };
+const marcas = ["Adiddas", "Calenciaga", "K-Swiss", "Nike", "Puma"];
+const categorias = ["Esporte e lazer", "Casual", "Utilitário", "Corrida"];
+const generos = ["Masculino", "Feminino", "Unisex"];
+const estados = ["Novo", "Usado"];
 
-  const handleCheckboxChange = (filterName, value, isChecked) => {
-    onFilterChange(filterName, value, isChecked, 'checkbox');
-  };
+const FilterGroup = ({ onFilterChange, currentFilters, onClose }) => {
+  return (
+    <div className="flex flex-col p-4  rounded shadow-md w-full sm:w-[308px] bg-[#FFFFFF]">
+      {/* Título e botão X (só no mobile) */}
+      <div className="flex justify-between items-center mb-4">
+        <span className="font-bold text-[16px] leading-6 tracking-[0.75px] font-inter">
+          Filtrar por
+        </span>
+        <button
+          className="sm:hidden text-2xl font-bold text-gray-500 hover:text-pink-700"
+          onClick={onClose}
+          aria-label="Fechar filtros"
+        >
+          ×
+        </button>
+      </div>
+      <hr className="mb-4 w-[248px] border-t border-[#CCCCCC]" />
 
-  const handleRadioChange = (filterName, value) => {
-    onFilterChange(filterName, value, true, 'radio');
-  };
-
-  const renderCheckboxGroup = (filterName, title, options) => (
-    <div className="filter-group">
-      <h3 className="filter-title">{title}</h3>
-      <div className="filter-options">
-        {options.map(option => (
-          <label key={option.value} className="filter-option">
+      {/* Marca */}
+      <div className="flex flex-col w-[120px] h-[182px] gap-[10px] mb-[50px]">
+        <div className="font-bold mb-2">Marca</div>
+        {marcas.map((marca) => (
+          <label key={marca} className="flex items-center cursor-pointer">
             <input
               type="checkbox"
-              className="filter-checkbox"
-              checked={currentFilters[filterName].includes(option.value)}
-              onChange={(e) => handleCheckboxChange(filterName, option.value, e.target.checked)}
+              checked={currentFilters.brand.includes(marca)}
+              onChange={(e) =>
+                onFilterChange("brand", marca, e.target.checked, "checkbox")
+              }
+              className="accent-pink-600 mr-2 w-[22px] h-[22px]"
             />
-            <span className="filter-label">{option.label}</span>
+            {marca}
           </label>
         ))}
       </div>
-    </div>
-  );
 
-  const renderRadioGroup = (filterName, title, options) => (
-    <div className="filter-group">
-      <h3 className="filter-title">{title}</h3>
-      <div className="filter-options">
-        {options.map(option => (
-          <label key={option.value} className="filter-option">
+      {/* Categoria */}
+      <div className="flex flex-col w-[180px] h-[150px] gap-[10px] mb-[50px]">
+        <div className="font-bold mb-2">Categoria</div>
+        {categorias.map((cat) => (
+          <label key={cat} className="flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              checked={currentFilters.category.includes(cat)}
+              onChange={(e) =>
+                onFilterChange("category", cat, e.target.checked, "checkbox")
+              }
+              className="accent-pink-600 mr-2 w-[22px] h-[22px]"
+            />
+            {cat}
+          </label>
+        ))}
+      </div>
+
+      {/* Gênero */}
+      <div className="flex flex-col w-[103px] h-[118px] gap-[10px] mb-[50px]">
+        <div className="font-bold mb-2">Gênero</div>
+        {generos.map((gen) => (
+          <label key={gen} className="flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              checked={currentFilters.gender.includes(gen)}
+              onChange={(e) =>
+                onFilterChange("gender", gen, e.target.checked, "checkbox")
+              }
+              className="accent-pink-600 mr-2 w-[22px] h-[22px]"
+            />
+            {gen}
+          </label>
+        ))}
+      </div>
+
+      {/* Estado */}
+      <div className="flex flex-col w-[90px] h-[100px] gap-[10px] mb-[50px]">
+        <div className="font-bold mb-2">Estado</div>
+        {estados.map((estado) => (
+          <label key={estado} className="flex items-center cursor-pointer">
             <input
               type="radio"
-              name={filterName}
-              className="filter-radio"
-              checked={currentFilters[filterName] === option.value}
-              onChange={() => handleRadioChange(filterName, option.value)}
+              name="estado"
+              checked={currentFilters.condition === estado}
+              onChange={(e) =>
+                onFilterChange("condition", estado, e.target.checked, "radio")
+              }
+              className="accent-pink-600 mr-2 w-[22px] h-[22px]"
             />
-            <span className="filter-label">{option.label}</span>
+            {estado}
           </label>
         ))}
-        <label className="filter-option">
-          <input
-            type="radio"
-            name={filterName}
-            className="filter-radio bg-primary"
-            checked={currentFilters[filterName] === ''}
-            onChange={() => handleRadioChange(filterName, '')}
-          />
-          <span className="filter-label">Todas</span>
-        </label>
       </div>
-    </div>
-  );
-
-  return (
-    <div className="filter-panel">
-      <span>Filtra por</span>
-     <div className="w-full h-[2px] bg-gray-200 rounded my-4"></div>
-      {renderCheckboxGroup('brand', 'Marca', filterOptions.brand)}
-      {renderCheckboxGroup('category', 'Categoria', filterOptions.category)}
-      {renderCheckboxGroup('gender', 'Gênero', filterOptions.gender)}
-      {renderRadioGroup('condition', 'Condição', filterOptions.condition)}
     </div>
   );
 };
-export default FilterGroup; 
+
+export default FilterGroup;
