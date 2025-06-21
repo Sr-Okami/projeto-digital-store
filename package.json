@@ -1,7 +1,7 @@
 {
   "name": "projeto-digital-store",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "author": "Matheus de Sousa Nascimento, Jessica Oliveira da Costa Lima, Ana Lucia de Mendonça Estima",
   "scripts": {
