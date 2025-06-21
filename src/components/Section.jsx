@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const Section = ({ title, titleAlign = "left", link, children }) => (
   <section className="mb-8">
@@ -20,13 +22,13 @@ const Section = ({ title, titleAlign = "left", link, children }) => (
         {title}
       </h2>
       {link && (
-        <a
-          href={link.href}
+        <Link
+          to={link.href}
           className="text-primary text-lg ml-4"
           style={{ fontSize: 18 }}
         >
           {link.text}
-        </a>
+        </Link>
       )}
     </div>
     {children}
