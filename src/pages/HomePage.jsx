@@ -76,7 +76,9 @@ const HomePage = () => {
                     <Section
                         title="Produtos em alta"
                         titleAlign="center"
+
                         link={{ href: "/produtos", text: "Ver tudo →" }}
+
                     >
                         <div className="px-4">
                             <div className="">

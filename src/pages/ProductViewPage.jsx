@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 
 const cores = ["#5EE7FF", "#FF6B6B", "#555", "#6C63FF"];
 
+
 const ProductViewPage = () => {
   const { id } = useParams();
   const produto = produtos.find((p) => String(p.id) === String(id));
@@ -16,6 +17,8 @@ const ProductViewPage = () => {
     return <div className="p-8 text-center text-red-500">Produto não encontrado.</div>;
   }
   return (
+      <main className="px-4 py-12 relative">
+        <section>
     <div className="flex flex-col px-4 py-4 bg-gray-100 md:pl-15">
       <div className="w-full mb-4">
         <h3 className="text-xs">
@@ -42,8 +45,13 @@ const ProductViewPage = () => {
         <div className="grid grid-cols-1 md:flex gap-3 mt-5 w-full">
           <ProductCard />
         </div>
+    </Section>
+      
       </div>
-    </div>
+      
+      </div>
+    </section>
+    </main>
   );
 };
 
